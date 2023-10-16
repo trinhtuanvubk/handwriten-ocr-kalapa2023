@@ -3,23 +3,8 @@ import random
 def read_excel(filepath, outpath):
     data = pd.read_excel(filepath)
     print(data)
-    cols = ["Tỉnh Thành Phố", "Quận Huyện", "Phường Xã"]
-    number = "12345678"
     alphabet = "abcdeg"
-    old_val = ""
     with open(outpath, "a+") as f:
-        # try:
-        #     for col in cols:
-        #         old_val = ""
-        #         # print(col)
-        #         print(data[col])
-        #         for val in data[col]:
-        #             print(val)
-        #             if val!=old_val:
-        #                 f.write(val+"\n")
-        #                 old_val = val
-        # except:
-        #     print("ignore")
         for idx, row in data.iterrows():
             try:
                 pre = random.choice(["Ngõ", "Đường", "Số", "Tổ", "Ngách", "Khu"])
@@ -36,7 +21,7 @@ def read_excel(filepath, outpath):
                 # print(row["Phường Xã"])
             except:
                 print("ignore")
-        # f.close()
+        f.close()
 
 
 
