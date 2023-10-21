@@ -1,5 +1,7 @@
 /data/*/
 push.sh
+gen_text/OCR-Vietnamese-Text-Generator/trdg/texts/special_domain/kalapa
+gen_text/OCR-Vietnamese-Text-Generator/trdg/out
 
 
 # Byte-compiled / optimized / DLL files
