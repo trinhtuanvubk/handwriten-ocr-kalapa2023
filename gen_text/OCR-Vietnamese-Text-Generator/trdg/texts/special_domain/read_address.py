@@ -32,7 +32,7 @@ def read_excel(filepath, outpath):
                 city = row["Tỉnh Thành Phố"].replace("Thành phố ", "TP ").replace("Tỉnh ", "")
                 district = row["Quận Huyện"].replace("Huyện ", "").replace("Quận ", "")
                 vilage = row["Phường Xã"].replace("Phường ", "").replace("Xã ", "").replace("Thị trấn ", "")
-                ran_address = f"{pre} {ran_num} {vilage} {district} {city}"
+                ran_address = f"{vilage} {district} {city}"
                 print(ran_address)
                 random_write = random.randint(0,2)
                 if random_write:
@@ -45,14 +45,20 @@ def read_excel(filepath, outpath):
         # f.close()
 
 def check_length(path):
-    with open('checked_address.txt', 'a+') as f: 
+    with open('checked_address50.txt', 'a+') as f: 
         with open(path, 'r') as f1:
             data = f1.readlines()
-            for i in data:
-                if len(i) < 50:
-                    f.write(i)
-                else:
-                    print(i)
+            for line in data:
+            #     if len(i) < 55:
+            #         f.write(i)
+            #     else:
+            #         print(i)
+                if (len(line[:-2]) > 50) and (len(line[:-2]) < 60):
+                    print(line)
+                    line = " ".join(line[:50].split(" ")[:-1])
+                    line += "\n"
+                    print(line)
+                f.write(line)
 
 def random_test(path):
     with open('eval_address.txt', "a+") as f:
@@ -67,5 +73,5 @@ if __name__=="__main__":
     path = "./address_list.xls"
     outpath = "./gen_address.txt"
     # read_excel(path, outpath)
-    # check_length(outpath)
-    random_test(outpath)
+    check_length(outpath)
+    # random_test(outpath)

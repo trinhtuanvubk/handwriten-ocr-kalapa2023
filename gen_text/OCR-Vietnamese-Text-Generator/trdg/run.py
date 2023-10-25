@@ -453,6 +453,9 @@ def main():
 
 
     string_count = len(strings)
+    print(string_count)
+    print(len(fonts))
+    print(fonts)
 
     p = Pool(args.thread_count)
     for _ in tqdm(
