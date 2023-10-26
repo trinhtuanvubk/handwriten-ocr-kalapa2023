@@ -1,13 +1,13 @@
 python3 run.py \
---count 50000 \
+--count 1000 \
 --language vi \
 --format 48 \
 --name_format 2 \
 --current_idx 0 \
---output_dir ./out/images_hw_test/ \
---label_dir ./out/labels_hw_test/ \
+--output_dir ./out/images_hw_background/ \
+--label_dir ./out/labels_hw_background/ \
 --font_dir ./fonts/HWT/ \
---input_file ./texts/special_domain/eval_address.txt \
+--input_file ./texts/special_domain/added_background.txt \
 --background 3 \
 --image_dir ./images/ \
 --margins "3,10,3,3" \
